@@ -32,6 +32,7 @@ if "%choice%"=="5" (
 )
 REM had to use goto, beacuse somehow the variable is empty no matter what I do when I execute it inside the if statement
 :disableupdates
+adb usb
 REM Running both the commands to make sure that at least one of them works(they both do the same thing)
 adb shell pm disable-user com.oculus.updater
 adb shell pm disable-user --user 0 com.oculus.updater
@@ -40,6 +41,7 @@ echo Click any button to return to the menu
 pause
 goto menu
 :enableautoupdates
+adb usb
 adb shell pm enable com.oculus.updater
 echo DONE
 echo Click any button to return to the menu
